@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+python-multipart
+opencc-python-reimplemented
+pysubs2
+chardet

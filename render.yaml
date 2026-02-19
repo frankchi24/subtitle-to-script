@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: subtitle-to-script
+    env: docker
+    plan: free
+    healthCheckPath: /
