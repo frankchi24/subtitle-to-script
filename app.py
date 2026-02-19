@@ -1,10 +1,12 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 from processor import process_subtitle_bytes
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 MB
