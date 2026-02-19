@@ -10,6 +10,11 @@ templates = Jinja2Templates(directory="templates")
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 MB
 
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
